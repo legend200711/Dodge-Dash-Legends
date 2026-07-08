@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>History – PlaylistSync</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="app-page">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="nav-logo"><span class="logo-icon">🎵</span><span>PlaylistSync</span></a>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a href="transfer.html" class="nav-item"><span class="nav-icon">↗</span> New Transfer</a>
+      <a href="history.html" class="nav-item active"><span class="nav-icon">⏱</span> History</a>
+      <a href="settings.html" class="nav-item"><span class="nav-icon">⚙</span> Settings</a>
+    </nav>
+    <div class="sidebar-user" id="sidebar-user">
+      <div class="user-avatar" id="user-avatar">?</div>
+      <div class="user-info">
+        <span class="user-name" id="user-name">Loading...</span>
+        <span class="user-email" id="user-email"></span>
+      </div>
+      <button class="btn-signout" onclick="signOut()" title="Sign out">⏻</button>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="topbar">
+      <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+      <h1 class="page-title">Transfer History</h1>
+      <div class="topbar-right">
+        <input type="text" id="history-search" class="search-input" placeholder="Search playlists..." oninput="filterHistory(this.value)" />
+        <button class="btn btn-outline btn-sm" onclick="exportAllReports()">Export All</button>
+      </div>
+    </div>
+
+    <!-- FILTER TABS -->
+    <div class="filter-tabs">
+      <button class="filter-tab active" onclick="filterByStatus('all', this)">All</button>
+      <button class="filter-tab" onclick="filterByStatus('completed', this)">Completed</button>
+      <button class="filter-tab" onclick="filterByStatus('partial', this)">Partial</button>
+      <button class="filter-tab" onclick="filterByStatus('failed', this)">Failed</button>
+    </div>
+
+    <!-- HISTORY LIST -->
+    <div id="history-list" class="history-list">
+      <div class="empty-state" id="history-empty">
+        <p>No transfer history yet.</p>
+        <a href="transfer.html" class="btn btn-primary btn-sm">Start Your First Transfer</a>
+      </div>
+    </div>
+
+    <!-- HISTORY DETAIL MODAL -->
+    <div class="modal-overlay hidden" id="history-modal">
+      <div class="modal">
+        <div class="modal-header">
+          <h3 id="modal-title">Transfer Details</h3>
+          <button class="modal-close" onclick="closeModal()">✕</button>
+        </div>
+        <div class="modal-body" id="modal-body">
+          <!-- Injected by JS -->
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary btn-sm" id="modal-retry" onclick="retryTransfer()">Retry Failed Songs</button>
+          <button class="btn btn-outline btn-sm" onclick="exportSingleReport()">Export Report</button>
+          <button class="btn btn-ghost btn-sm" onclick="closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+      let overlay = document.getElementById('sidebar-overlay');
+      if (sidebar.classList.contains('open')) {
+        if (!overlay) { overlay = document.createElement('div'); overlay.id = 'sidebar-overlay'; overlay.className = 'sidebar-overlay'; overlay.onclick = toggleSidebar; document.body.appendChild(overlay); }
+      } else { if (overlay) overlay.remove(); }
+    }
+    function closeModal() {
+      document.getElementById('history-modal').classList.add('hidden');
+    }
+    function filterByStatus(status, btn) {
+      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      window._historyFilter = status;
+      if (window.renderHistory) renderHistory();
+    }
+    function filterHistory(query) {
+      window._historyQuery = query;
+      if (window.renderHistory) renderHistory();
+    }
+  </script>
+</body>
+</html>
