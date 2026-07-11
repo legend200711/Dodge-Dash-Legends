@@ -1,0 +1,54 @@
+{
+  "name": "Dodge Dash Legends",
+  "short_name": "Dodge Dash",
+  "description": "Dodge Dash Legends is a 3D racing game where players dodge traffic, collect power-ups, unlock characters and skins, complete timed races, and compete for high scores on PC and mobile.",
+  "start_url": "/Dodge-Dash-Legends/",
+  "scope": "/Dodge-Dash-Legends/",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "lang": "en-US",
+  "theme_color": "#0066FF",
+  "background_color": "#000000",
+  "categories": ["games", "entertainment"],
+  "icons": [
+    {
+      "src": "icons/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
