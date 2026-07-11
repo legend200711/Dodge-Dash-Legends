@@ -45,60 +45,15 @@
 ">
 
 <!-- ═══════════════════════════════════════════════
-     PWA MANIFEST
-═══════════════════════════════════════════════ -->
-<link rel="manifest" href="./manifest.json" crossorigin="use-credentials">
-
-<!-- ═══════════════════════════════════════════════
      THEME & BRAND
 ═══════════════════════════════════════════════ -->
-<meta name="theme-color" content="#7c4dff" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#5c2dff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#7c4dff">
 <meta name="color-scheme" content="dark">
 <meta name="application-name" content="Dodge Dash Legends">
-<meta name="description" content="3D Arcade Racing — dodge traffic, collect power-ups, race to the finish! Play offline, full screen, like a native app.">
-<meta name="keywords" content="racing game, arcade, 3D, offline game, PWA, dodge, cars">
+<meta name="description" content="3D Arcade Racing — dodge traffic, collect power-ups, race to the finish!">
+<meta name="keywords" content="racing game, arcade, 3D, dodge, cars">
 <meta name="author" content="Dodge Dash Legends">
 <meta name="robots" content="index, follow">
-
-<!-- ═══════════════════════════════════════════════
-     ANDROID / CHROME PWA
-═══════════════════════════════════════════════ -->
-<meta name="mobile-web-app-capable" content="yes">
-
-<!-- ═══════════════════════════════════════════════
-     APPLE / IOS PWA
-═══════════════════════════════════════════════ -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Dodge Dash">
-<meta name="format-detection" content="telephone=no">
-
-<!-- Apple touch icons (required for "Add to Home Screen" on iOS) -->
-<link rel="apple-touch-icon"             href="./icons/icon-192.png">
-<link rel="apple-touch-icon" sizes="152x152" href="./icons/icon-152.png">
-<link rel="apple-touch-icon" sizes="167x167" href="./icons/icon-192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-192.png">
-
-<!-- Apple splash screens (portrait) -->
-<link rel="apple-touch-startup-image" media="screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"  href="./icons/splash-1290x2796.png">
-<link rel="apple-touch-startup-image" media="screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"  href="./icons/splash-1179x2556.png">
-<link rel="apple-touch-startup-image" media="screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"  href="./icons/splash-1170x2532.png">
-<link rel="apple-touch-startup-image" media="screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"  href="./icons/splash-1284x2778.png">
-<link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"  href="./icons/splash-1125x2436.png">
-<link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"  href="./icons/splash-828x1792.png">
-<link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"  href="./icons/splash-750x1334.png">
-<link rel="apple-touch-startup-image" media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="./icons/splash-1536x2048.png">
-<link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="./icons/splash-1668x2224.png">
-<link rel="apple-touch-startup-image" media="screen and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="./icons/splash-2048x2732.png">
-
-<!-- ═══════════════════════════════════════════════
-     MICROSOFT / WINDOWS PWA
-═══════════════════════════════════════════════ -->
-<meta name="msapplication-TileColor" content="#0a0a0f">
-<meta name="msapplication-TileImage" content="./icons/icon-144.png">
-<meta name="msapplication-tap-highlight" content="no">
-<meta name="msapplication-config" content="none">
 
 <!-- ═══════════════════════════════════════════════
      OPEN GRAPH (social sharing)
@@ -120,9 +75,9 @@
 <!-- ═══════════════════════════════════════════════
      FAVICONS
 ═══════════════════════════════════════════════ -->
-<link rel="icon"               type="image/png" sizes="32x32" href="./icons/icon-48.png">
-<link rel="icon"               type="image/png" sizes="96x96" href="./icons/icon-96.png">
-<link rel="shortcut icon"      href="./icons/icon-192.png">
+<link rel="icon"          type="image/png" sizes="32x32" href="./icons/icon-48.png">
+<link rel="icon"          type="image/png" sizes="96x96" href="./icons/icon-96.png">
+<link rel="shortcut icon" href="./icons/icon-192.png">
 
 <!-- ═══════════════════════════════════════════════
      PRELOADS — get the game file and Three.js moving early
@@ -180,45 +135,9 @@ canvas{display:block;}
 
 /* ── Focus ring for accessibility ───────────────── */
 :focus-visible{outline:2px solid #7c4dff;outline-offset:2px;}
-
-/* ── Update banner (injected by PWA script) ─────── */
-#pwa-update-bar{
-  position:fixed;bottom:0;left:0;right:0;z-index:9999;
-  background:linear-gradient(90deg,#7c4dff,#e040fb);
-  color:#fff;text-align:center;
-  padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));
-  font-size:13px;font-weight:800;letter-spacing:1px;
-  display:none;
-  flex-direction:row;align-items:center;justify-content:center;gap:14px;
-  cursor:pointer;
-}
-#pwa-update-bar button{
-  background:rgba(255,255,255,0.22);border:1px solid rgba(255,255,255,0.4);
-  color:#fff;border-radius:8px;padding:6px 16px;font-size:12px;
-  font-weight:800;letter-spacing:1px;cursor:pointer;
-  touch-action:manipulation;
-}
-
-/* ── Offline badge ───────────────────────────────── */
-#pwa-offline-badge{
-  position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:9998;
-  background:#333;color:#aaa;font-size:11px;letter-spacing:1px;
-  padding:4px 16px;border-radius:0 0 8px 8px;
-  display:none;pointer-events:none;
-}
 </style>
 </head>
 <body>
-
-<!-- PWA: update notification bar (shown when SW detects a new version) -->
-<div id="pwa-update-bar" role="status" aria-live="polite">
-  <span>🚀 New version available!</span>
-  <button onclick="PWA.applyUpdate()" aria-label="Refresh to update">Refresh Now</button>
-  <button onclick="document.getElementById('pwa-update-bar').style.display='none'" aria-label="Dismiss update notification">✕</button>
-</div>
-
-<!-- PWA: offline status badge -->
-<div id="pwa-offline-badge" role="status" aria-live="polite">📵 OFFLINE MODE</div>
 
 <canvas id="game-canvas" aria-label="Dodge Dash Legends game canvas" role="img"></canvas>
 
@@ -328,12 +247,6 @@ canvas{display:block;}
     <button onclick="showScreen('screen-stats')" class="menu-btn" style="background:linear-gradient(135deg,#1565c0,#00e5ff);">🏆 STATS</button>
   </div>
   <div id="save-badge" style="margin-top:28px;font-size:12px;color:#555;letter-spacing:1px;"></div>
-
-  <!-- Install to phone button — shown only when browser fires beforeinstallprompt -->
-  <button id="btn-install" onclick="installApp()" style="display:none;margin-top:16px;background:linear-gradient(135deg,#00897b,#00e5ff);border:none;border-radius:12px;color:#fff;padding:12px 28px;font-size:13px;font-weight:800;letter-spacing:1.5px;cursor:pointer;width:260px;touch-action:manipulation;">
-    📲 INSTALL ON PHONE
-  </button>
-  <div id="install-hint" style="display:none;margin-top:10px;font-size:11px;color:#555;text-align:center;max-width:260px;line-height:1.6;letter-spacing:0.5px;"></div>
 </div>
 
 <!-- Race Mode / Track Select -->
@@ -2733,295 +2646,5 @@ function boot() {
 boot();
 </script>
 
-<script>
-// ═══════════════════════════════════════════════════════════
-//  PWA — Service Worker + Install + Notifications + Updates
-// ═══════════════════════════════════════════════════════════
-'use strict';
-
-const PWA = (() => {
-  // ── Internal state ──────────────────────────────────────
-  let _swRegistration  = null;
-  let _installPrompt   = null;
-  let _waitingWorker   = null;
-
-  // ── SW Registration ─────────────────────────────────────
-  async function registerSW() {
-    if (!('serviceWorker' in navigator)) return;
-    try {
-      _swRegistration = await navigator.serviceWorker.register('./sw.js', {
-        scope: './',
-        updateViaCache: 'none',
-      });
-
-      // Detect a new waiting worker (update available)
-      _swRegistration.addEventListener('updatefound', () => {
-        const newWorker = _swRegistration.installing;
-        if (!newWorker) return;
-        newWorker.addEventListener('statechange', () => {
-          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-            _waitingWorker = newWorker;
-            showUpdateBar();
-          }
-        });
-      });
-
-      // Check for updates every 30 minutes
-      setInterval(() => _swRegistration.update(), 30 * 60 * 1000);
-
-      // Register periodic background sync (once per day update check)
-      if ('periodicSync' in _swRegistration) {
-        try {
-          await _swRegistration.periodicSync.register('ddl-update-check', {
-            minInterval: 24 * 60 * 60 * 1000,
-          });
-        } catch { /* needs user engagement flag — silently skip */ }
-      }
-
-    } catch (err) {
-      console.warn('[PWA] SW registration failed:', err);
-    }
-  }
-
-  // ── Listen for messages from SW ──────────────────────────
-  function listenToSW() {
-    if (!('serviceWorker' in navigator)) return;
-
-    navigator.serviceWorker.addEventListener('message', ({ data }) => {
-      if (!data) return;
-      if (data.type === 'SW_UPDATED' || data.type === 'UPDATE_AVAILABLE') showUpdateBar();
-    });
-
-    // Reload once the new SW takes control (after skipWaiting)
-    let refreshing = false;
-    navigator.serviceWorker.addEventListener('controllerchange', () => {
-      if (!refreshing) { refreshing = true; window.location.reload(); }
-    });
-  }
-
-  // ── Apply update ─────────────────────────────────────────
-  function applyUpdate() {
-    const worker = _waitingWorker || _swRegistration?.waiting;
-    if (worker) worker.postMessage({ type: 'SKIP_WAITING' });
-    hideUpdateBar();
-  }
-
-  function showUpdateBar() {
-    const bar = document.getElementById('pwa-update-bar');
-    if (bar) bar.style.display = 'flex';
-  }
-  function hideUpdateBar() {
-    const bar = document.getElementById('pwa-update-bar');
-    if (bar) bar.style.display = 'none';
-  }
-
-  // ── Online / Offline badge ───────────────────────────────
-  function initNetworkListeners() {
-    const badge = document.getElementById('pwa-offline-badge');
-    const update = () => { if (badge) badge.style.display = navigator.onLine ? 'none' : 'block'; };
-    window.addEventListener('online',  update);
-    window.addEventListener('offline', update);
-    update();
-  }
-
-  // ── Install prompt (Android / Chrome) ────────────────────
-  window.addEventListener('beforeinstallprompt', e => {
-    e.preventDefault();
-    _installPrompt = e;
-    const btn  = document.getElementById('btn-install');
-    const hint = document.getElementById('install-hint');
-    if (btn) btn.style.display = 'block';
-    if (hint) {
-      hint.style.display = 'block';
-      hint.textContent   = 'Tap to add Dodge Dash Legends to your home screen. Play offline, full screen!';
-    }
-  });
-
-  async function promptInstall() {
-    if (_installPrompt) {
-      _installPrompt.prompt();
-      const { outcome } = await _installPrompt.userChoice;
-      _installPrompt = null;
-      const btn  = document.getElementById('btn-install');
-      const hint = document.getElementById('install-hint');
-      if (outcome === 'accepted') {
-        if (btn)  btn.style.display  = 'none';
-        if (hint) hint.textContent   = '✅ Installed! Open from your home screen.';
-      }
-    } else {
-      showInstallInstructions();
-    }
-  }
-
-  // ── Install instructions modal ───────────────────────────
-  function showInstallInstructions() {
-    const isIOS     = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-    const isAndroid = /Android/i.test(navigator.userAgent);
-    let steps = '';
-
-    if (isIOS) {
-      steps = `
-        <div style="display:flex;align-items:flex-start;gap:12px;margin:10px 0;"><span style="font-size:24px;flex-shrink:0;">1️⃣</span><span>Tap the <strong style="color:#00e5ff;">Share</strong> button <strong style="font-size:18px;">⬆</strong> at the bottom of Safari</span></div>
-        <div style="display:flex;align-items:flex-start;gap:12px;margin:10px 0;"><span style="font-size:24px;flex-shrink:0;">2️⃣</span><span>Scroll down and tap <strong style="color:#00e5ff;">"Add to Home Screen"</strong></span></div>
-        <div style="display:flex;align-items:flex-start;gap:12px;margin:10px 0;"><span style="font-size:24px;flex-shrink:0;">3️⃣</span><span>Tap <strong style="color:#00e676;">Add</strong> in the top-right corner</span></div>
-        <div style="margin-top:10px;padding:10px;background:rgba(255,255,255,0.06);border-radius:8px;font-size:12px;color:#888;">⚠️ Must be opened in <strong style="color:#fff">Safari</strong> on iPhone/iPad</div>`;
-    } else if (isAndroid) {
-      steps = `
-        <div style="display:flex;align-items:flex-start;gap:12px;margin:10px 0;"><span style="font-size:24px;flex-shrink:0;">1️⃣</span><span>Tap the <strong style="color:#00e5ff;">⋮ menu</strong> (three dots) in Chrome</span></div>
-        <div style="display:flex;align-items:flex-start;gap:12px;margin:10px 0;"><span style="font-size:24px;flex-shrink:0;">2️⃣</span><span>Tap <strong style="color:#00e5ff;">"Add to Home screen"</strong></span></div>
-        <div style="display:flex;align-items:flex-start;gap:12px;margin:10px 0;"><span style="font-size:24px;flex-shrink:0;">3️⃣</span><span>Tap <strong style="color:#00e676;">Add</strong></span></div>`;
-    } else {
-      steps = `
-        <div style="display:flex;align-items:flex-start;gap:12px;margin:10px 0;"><span style="font-size:24px;flex-shrink:0;">📱</span><span>Open this page on your phone in <strong style="color:#00e5ff;">Chrome (Android)</strong> or <strong style="color:#00e5ff;">Safari (iPhone)</strong> to install.</span></div>
-        <div style="margin-top:8px;font-size:12px;color:#888;">Then use the browser menu → "Add to Home Screen"</div>`;
-    }
-
-    // Remove any existing overlay
-    document.getElementById('install-overlay')?.remove();
-
-    const overlay = document.createElement('div');
-    overlay.id = 'install-overlay';
-    overlay.setAttribute('role', 'dialog');
-    overlay.setAttribute('aria-modal', 'true');
-    overlay.setAttribute('aria-label', 'Install Dodge Dash Legends');
-    overlay.style.cssText = `position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.88);display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;backdrop-filter:blur(6px);padding-bottom:calc(24px + env(safe-area-inset-bottom,0px));`;
-    overlay.innerHTML = `
-      <div style="background:#0d0d1a;border:1px solid rgba(0,229,255,0.3);border-radius:20px;padding:28px;max-width:380px;width:100%;color:#fff;font-size:14px;line-height:1.6;">
-        <div style="text-align:center;margin-bottom:18px;">
-          <div style="font-size:48px;">📲</div>
-          <h2 style="margin:8px 0 4px;font-size:20px;font-weight:900;letter-spacing:1px;background:linear-gradient(135deg,#00e5ff,#7c4dff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Install Dodge Dash Legends</h2>
-          <p style="color:#666;font-size:12px;margin:0;">Add to your home screen for full-screen play</p>
-        </div>
-        ${steps}
-        <button onclick="document.getElementById('install-overlay').remove()" style="width:100%;margin-top:20px;padding:14px;background:linear-gradient(135deg,#7c4dff,#e040fb);border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:800;cursor:pointer;letter-spacing:1px;touch-action:manipulation;">
-          GOT IT ✓
-        </button>
-      </div>`;
-    document.body.appendChild(overlay);
-    overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
-  }
-
-  // ── Push Notifications ────────────────────────────────────
-  async function requestNotificationPermission() {
-    if (!('Notification' in window)) return 'unsupported';
-    if (Notification.permission !== 'default') return Notification.permission;
-    const result = await Notification.requestPermission();
-    if (result === 'granted') await subscribeToPush();
-    return result;
-  }
-
-  async function subscribeToPush() {
-    if (!_swRegistration || !('PushManager' in window)) return;
-    try {
-      const existing = await _swRegistration.pushManager.getSubscription();
-      if (existing) return;
-      // Replace VAPID_PUBLIC_KEY with your own key from https://vapidkeys.com
-      const VAPID_PUBLIC_KEY = 'BEl62iUYgUivxIkv69yViEuiBIa40EJ2Vs9rz4F3Y6x3T4y_d9T4L--KFQaBkqFgpQpQMoEIxHovkBLkpqpHpA';
-      await _swRegistration.pushManager.subscribe({
-        userVisibleOnly: true,
-        applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY),
-      });
-    } catch (err) {
-      console.warn('[PWA] Push subscribe failed:', err.message);
-    }
-  }
-
-  function urlBase64ToUint8Array(b64) {
-    const pad = '='.repeat((4 - (b64.length % 4)) % 4);
-    const raw = atob((b64 + pad).replace(/-/g, '+').replace(/_/g, '/'));
-    return Uint8Array.from([...raw].map(c => c.charCodeAt(0)));
-  }
-
-  // ── Screen Wake Lock ──────────────────────────────────────
-  let _wakeLock = null;
-  async function requestWakeLock() {
-    if (!('wakeLock' in navigator)) return;
-    try {
-      _wakeLock = await navigator.wakeLock.request('screen');
-      document.addEventListener('visibilitychange', async () => {
-        if (document.visibilityState === 'visible' && _wakeLock?.released) {
-          _wakeLock = await navigator.wakeLock.request('screen').catch(() => null);
-        }
-      });
-    } catch { /* not supported or denied */ }
-  }
-
-  // ── iOS + standalone detection ────────────────────────────
-  function initIOSInstallHint() {
-    const isIOS        = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-    const isStandalone = window.matchMedia('(display-mode: standalone)').matches
-                      || window.navigator.standalone === true;
-
-    if (isStandalone) {
-      document.getElementById('btn-install')?.style && (document.getElementById('btn-install').style.display  = 'none');
-      document.getElementById('install-hint')?.style && (document.getElementById('install-hint').style.display = 'none');
-      return;
-    }
-
-    if (isIOS) {
-      const btn  = document.getElementById('btn-install');
-      const hint = document.getElementById('install-hint');
-      if (btn) btn.style.display = 'block';
-      if (hint) {
-        hint.style.display = 'block';
-        hint.textContent   = 'Open in Safari → Share ⬆ → Add to Home Screen';
-      }
-    }
-  }
-
-  // ── Startup shortcut action handling ─────────────────────
-  function handleStartupAction() {
-    try {
-      const action = new URLSearchParams(location.search).get('action');
-      if (!action) return;
-      window.addEventListener('ddl-boot-complete', () => {
-        if (action === 'quickrace')  { GameState.raceMode = 'quick'; showScreen('screen-mode'); }
-        if (action === 'timetrial') startTimeTrialMode();
-      }, { once: true });
-    } catch { /* fine */ }
-  }
-
-  // ── Background sync helper ────────────────────────────────
-  async function queueSaveSync(saveData) {
-    if (!_swRegistration) return;
-    navigator.serviceWorker.controller?.postMessage({ type: 'QUEUE_SAVE', payload: saveData });
-    if ('sync' in _swRegistration) {
-      try { await _swRegistration.sync.register('ddl-save-sync'); } catch { /* not supported */ }
-    }
-  }
-
-  // ── Init ─────────────────────────────────────────────────
-  async function init() {
-    initNetworkListeners();
-    initIOSInstallHint();
-    handleStartupAction();
-
-    window.addEventListener('load', async () => {
-      await registerSW();
-      listenToSW();
-    });
-
-    // Resume audio on first interaction
-    document.addEventListener('pointerdown', () => Audio?.resume?.(), { once: true });
-    document.addEventListener('keydown',     () => Audio?.resume?.(), { once: true });
-  }
-
-  return {
-    init,
-    applyUpdate,
-    promptInstall,
-    showInstallInstructions,
-    requestNotificationPermission,
-    requestWakeLock,
-    queueSaveSync,
-    get swRegistration() { return _swRegistration; },
-  };
-})();
-
-PWA.init();
-
-// Keep existing onclick="installApp()" working
-window.installApp = () => PWA.promptInstall();
-</script>
 </body>
 </html>
